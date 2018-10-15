@@ -1,0 +1,66 @@
+.wrapper
+  .sidebar
+    .header
+      .user-info
+        %p.user-info__name
+          sample_name
+        %ul.user-info__menu
+          %li.user-info__menu--new-create-group
+            %i.fa.fa-cog
+          %li.user-info__menu--edit-user
+            %i.fa.fa-edit
+    .groups
+      .groups-info
+        %a
+          %p.groups-info__groups-name
+            group_name1
+          %p.groups-info__new-message
+            new_message1
+      .groups-info
+        %a
+          %p.groups-info__groups-name
+            group_name2
+          %p.groups-info__new-message
+            new_message2
+      .groups-info
+        %a
+          %p.groups-info__groups-name
+            group_name3
+          %p.groups-info__new-message
+            new_message3
+  .main
+    .header
+      .header-left
+        %p.header-left__current-group
+          current_group_name
+        %p.header-left__current-group-members
+          Members:current_group_members
+      .header-right
+        %a.header-right__header-right__edit-btn
+          edit
+    .messages
+      .a-message
+        .name-and-date
+          %p.name-and-date__post-user
+            post-user
+          %p.name-and-date__post-date
+            post-date
+        %p.text__text
+          text
+        %img.pic
+          img
+    .form
+      %form
+        .input-box
+          %input{type: "text_field"}
+            type-a-message
+            %label{for: "imagefile"}
+              %i.far.fa-file-image
+              %input{type: "file", id: "imagefile"}
+        %input{type: "submit"}
+
+
+
+
+
+
