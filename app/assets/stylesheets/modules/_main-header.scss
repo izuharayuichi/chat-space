@@ -1,13 +1,19 @@
 .main{
+  width: calc( 100vw - 300px );
   float: left;
+  padding: 0 40px 0 40px;
+  box-sizing: border-box;
   .header{
-    border: #eeeeee;
-    @include div-basic( 100px, calc( 100vw - 300px))
+    border-bottom-style: solid;
+    border-bottom-color: #eeeeee;
+    margin-left: calc(((( 100vw - 300px) - 100%) / 2) * -1);
+    margin-right: calc(((( 100vw - 300px) - 100%) / 2) * -1);
+    padding: 0 40px;
+    @include div-basic( 100px, calc( 100vw - 300px ))
   }
 }
 
 .header-left{
-  margin: 0 40px;
   float: left;
   .header-left__current-group{
     font-size: 20px;
@@ -21,7 +27,7 @@
 }
 
 .header-right{
-  margin: 28px 40px;
+  margin: 28px 0;
   padding: 0 20px;
   height: 40px;
   border: solid 2px $light-blue;

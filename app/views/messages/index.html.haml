@@ -49,18 +49,31 @@
           text
         %img.pic
           img
+      .a-message
+        .name-and-date
+          %p.name-and-date__post-user
+            post-user2
+          %p.name-and-date__post-date
+            post-date2
+        %p.text__text
+          text2
+        %img.pic
+          img2
+      .a-message
+        .name-and-date
+          %p.name-and-date__post-user
+            post-user3
+          %p.name-and-date__post-date
+            post-date3
+        %p.text__text
+          text3
+        %img.pic
+          img3
     .form
       %form
         .input-box
-          %input{type: "text_field"}
-            type-a-message
-            %label{for: "imagefile"}
+          %input.input-left{type: "text_field", placeholder: "type-a-message"}
+            %label.input-left__icon{for: "imagefile"}
               %i.fa.fa-image
-              %input{type: "file", id: "imagefile"}
-        %input{type: "submit"}
-
-
-
-
-
-
+              %input.input-file{type: "file",  id: "imagefile"}
+        %input.submit-btn{type: "submit", value: "Send"}
