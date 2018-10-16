@@ -1,0 +1,28 @@
+.messages{
+  padding: 6px 0 0 0;
+  @include div-basic( calc(100vh - 100px - 90px), calc( 100vw - 300px))
+}
+
+.name-and-date{
+  &__post-user{
+    margin: 40px 0 10px 0;
+    float: left;
+    color: #434A54;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  &__post-date{
+    margin: 44px 0 10px 10px;
+    float: left;
+    color: #999999;
+    font-size: 12px;
+  }
+}
+
+.text{
+  clear: both;
+  color: #434A54;
+  font-size: 14px;
+}
+
+

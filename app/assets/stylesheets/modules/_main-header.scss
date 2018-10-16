@@ -1,0 +1,37 @@
+.main{
+  width: calc( 100vw - 300px );
+  float: left;
+  padding: 0 40px 0 40px;
+  box-sizing: border-box;
+  .header{
+    border-bottom-style: solid;
+    border-bottom-color: #eeeeee;
+    margin-left: calc(((( 100vw - 300px) - 100%) / 2) * -1);
+    margin-right: calc(((( 100vw - 300px) - 100%) / 2) * -1);
+    padding: 0 40px;
+    @include div-basic( 100px, calc( 100vw - 300px ))
+  }
+}
+
+.header-left{
+  float: left;
+  &__current-group{
+    font-size: 20px;
+    color: #333333;
+    padding: 35px 0 15px 0;
+  }
+  &__current-group-members{
+    font-size: 12px;
+    color: #999999;
+  }
+}
+
+.header-right{
+  margin: 28px 0;
+  padding: 0 20px;
+  height: 40px;
+  border: solid 2px $light-blue;
+  line-height: 40px;
+  color: $light-blue;
+  float: right;
+}

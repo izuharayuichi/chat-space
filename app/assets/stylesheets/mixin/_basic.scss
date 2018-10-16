@@ -1,0 +1,6 @@
+@mixin div-basic ($height: null, $width: null, $bgcolor: #fff, $boxsizing: border-box){
+  height: $height;
+  width: $width;
+  background-color: $bgcolor;
+  box-sizing: $boxsizing;
+}

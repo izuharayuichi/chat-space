@@ -1,0 +1,27 @@
+.sidebar{
+  float: left;
+  .header{
+    @include div-basic(100px, 300px, #253141)
+  }
+}
+
+.user-info{
+  line-height: 100px;
+  padding: 0 20px;
+  &__name{
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    float: left;
+  }
+  &__menu{
+    color: #FFFFFF;
+    &--new-create-group{
+      float: right;
+    }
+    &--edit-user{
+      float: right;
+    }
+  }
+}
+
