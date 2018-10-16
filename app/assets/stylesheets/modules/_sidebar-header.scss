@@ -8,18 +8,18 @@
 .user-info{
   line-height: 100px;
   padding: 0 20px;
-  .user-info__name{
+  &__name{
     font-size: 16px;
     font-weight: bold;
     color: #FFFFFF;
     float: left;
   }
-  .user-info__menu{
+  &__menu{
     color: #FFFFFF;
-    .user-info__menu--new-create-group{
+    &--new-create-group{
       float: right;
     }
-    .user-info__menu--edit-user{
+    &--edit-user{
       float: right;
     }
   }
