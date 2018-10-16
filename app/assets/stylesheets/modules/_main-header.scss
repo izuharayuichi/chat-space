@@ -1,0 +1,31 @@
+.main{
+  float: left;
+  .header{
+    border: #eeeeee;
+    @include div-basic( 100px, calc( 100vw - 300px))
+  }
+}
+
+.header-left{
+  margin: 0 40px;
+  float: left;
+  .header-left__current-group{
+    font-size: 20px;
+    color: #333333;
+    padding: 35px 0 15px 0;
+  }
+  .header-left__current-group-members{
+    font-size: 12px;
+    color: #999999;
+  }
+}
+
+.header-right{
+  margin: 28px 40px;
+  padding: 0 20px;
+  height: 40px;
+  border: solid 2px $light-blue;
+  line-height: 40px;
+  color: $light-blue;
+  float: right;
+}
