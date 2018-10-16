@@ -4,12 +4,12 @@
 
 .groups-info{
   padding: 0 20px;
-  .groups-info__groups-name{
+  &__groups-name{
   font-size: 15px;
   color: #FFFFFF;
   padding: 20px 0 5px 0;
   }
-  .groups-info__new-message{
+  &__new-message{
   font-size: 11px;
   color: #FFFFFF;
   margin: 0 0 20px 0;

@@ -15,12 +15,12 @@
 
 .header-left{
   float: left;
-  .header-left__current-group{
+  &__current-group{
     font-size: 20px;
     color: #333333;
     padding: 35px 0 15px 0;
   }
-  .header-left__current-group-members{
+  &__current-group-members{
     font-size: 12px;
     color: #999999;
   }
