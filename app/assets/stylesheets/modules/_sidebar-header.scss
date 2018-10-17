@@ -16,12 +16,14 @@
   }
   &__menu{
     color: #FFFFFF;
-    &--new-create-group{
-      float: right;
-    }
-    &--edit-user{
-      float: right;
-    }
+    float: right;
   }
 }
 
+.fa.fa-edit {
+  color: #FFFFFF;
+}
+
+.fa.fa-cog {
+  color: #FFFFFF;
+}
