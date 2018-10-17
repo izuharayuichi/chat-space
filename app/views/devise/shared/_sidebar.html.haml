@@ -1,0 +1,29 @@
+.sidebar
+  .header
+    .user-info
+      %p.user-info__name
+        = current_user.name
+      %ul.user-info__menu
+        = link_to do
+          %i.fa.fa-cog
+        = link_to edit_user_path(current_user) do
+          %i.fa.fa-edit
+  .groups
+    .groups-info
+      %a
+        %p.groups-info__groups-name
+          group_name1
+        %p.groups-info__new-message
+          new_message1
+    .groups-info
+      %a
+        %p.groups-info__groups-name
+          group_name2
+        %p.groups-info__new-message
+          new_message2
+    .groups-info
+      %a
+        %p.groups-info__groups-name
+          group_name3
+        %p.groups-info__new-message
+          new_message3

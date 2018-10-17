@@ -1,7 +1,7 @@
 .sidebar{
   float: left;
   .header{
-    @include div-basic(100px, 300px, #253141)
+    @include div-basic(100px, 300px, $side_blue_dark)
   }
 }
 
@@ -16,12 +16,14 @@
   }
   &__menu{
     color: #FFFFFF;
-    &--new-create-group{
-      float: right;
-    }
-    &--edit-user{
-      float: right;
-    }
+    float: right;
   }
 }
 
+.fa.fa-edit {
+  color: #FFFFFF;
+}
+
+.fa.fa-cog {
+  color: #FFFFFF;
+}
