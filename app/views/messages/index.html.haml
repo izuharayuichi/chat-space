@@ -1,33 +1,6 @@
 .wrapper
-  .sidebar
-    .header
-      .user-info
-        %p.user-info__name
-          sample_name
-        %ul.user-info__menu
-          %li.user-info__menu--new-create-group
-            %i.fa.fa-cog
-          %li.user-info__menu--edit-user
-            %i.fa.fa-edit
-    .groups
-      .groups-info
-        %a
-          %p.groups-info__groups-name
-            group_name1
-          %p.groups-info__new-message
-            new_message1
-      .groups-info
-        %a
-          %p.groups-info__groups-name
-            group_name2
-          %p.groups-info__new-message
-            new_message2
-      .groups-info
-        %a
-          %p.groups-info__groups-name
-            group_name3
-          %p.groups-info__new-message
-            new_message3
+  = render partial: "devise/share/sidebar"
+
   .main
     .header
       .header-left
