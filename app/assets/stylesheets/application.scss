@@ -1,5 +1,5 @@
 @import "./reset";
-@import "./config/variable";
+@import "./config/colors";
 @import "./mixin/basic";
 @import "font-awesome";
 @import "./modules/sidebar-header";
@@ -8,4 +8,5 @@
 @import "./modules/main-messages";
 @import "./modules/form";
 @import "./modules/user";
+@import "./modules/flash";
 @import "./style";
