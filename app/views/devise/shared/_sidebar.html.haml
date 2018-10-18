@@ -4,26 +4,17 @@
       %p.user-info__name
         = current_user.name
       %ul.user-info__menu
-        = link_to do
-          %i.fa.fa-cog
-        = link_to edit_user_path(current_user) do
+        = link_to new_group_path do
           %i.fa.fa-edit
+        = link_to edit_user_path(current_user) do
+          %i.fa.fa-cog
   .groups
-    .groups-info
-      %a
-        %p.groups-info__groups-name
-          group_name1
-        %p.groups-info__new-message
-          new_message1
-    .groups-info
-      %a
-        %p.groups-info__groups-name
-          group_name2
-        %p.groups-info__new-message
-          new_message2
-    .groups-info
-      %a
-        %p.groups-info__groups-name
-          group_name3
-        %p.groups-info__new-message
-          new_message3
+    - current_user.groups.each do |group|
+      .groups-info
+        = link_to group_messages_path(group) do
+          %a
+            %p.groups-info__groups-name
+              = group.name
+            %p.groups-info__new-message
+              メッセージはまだありません。
+
