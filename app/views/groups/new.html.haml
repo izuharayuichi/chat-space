@@ -8,8 +8,7 @@
         %label.chat-group-form__label{for: "chat_group_name"} グループ名
       .chat-group-form__field--right
         = form_for @group do |f|
-          = f.text_field :chat_group[name], placeholder: "グループ名を入力してください"
-          = f.submit "Send"
+          = f.text_field :name, placeholder: "グループ名を入力してください"
     .chat-group-form__field.clearfix
       / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
       /
