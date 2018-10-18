@@ -10,20 +10,11 @@
           %i.fa.fa-cog
   .groups
     .groups-info
-      %a
-        %p.groups-info__groups-name
-          group_name1
-        %p.groups-info__new-message
-          new_message1
-    .groups-info
-      %a
-        %p.groups-info__groups-name
-          group_name2
-        %p.groups-info__new-message
-          new_message2
-    .groups-info
-      %a
-        %p.groups-info__groups-name
-          group_name3
-        %p.groups-info__new-message
-          new_message3
+      - current_user.groups.each do |group|
+        = link_to group_messages_path(group) do
+          %a
+            %p.groups-info__groups-name
+              = group.name
+            %p.groups-info__new-message
+              メッセージはまだありません。
+
