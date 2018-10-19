@@ -12,9 +12,9 @@
     - current_user.groups.each do |group|
       .groups-info
         = link_to group_messages_path(group) do
-          %a
-            %p.groups-info__groups-name
-              = group.name
-            %p.groups-info__new-message
-              = group.show_last_message
+          %p.groups-info__groups-name
+            = group.name
+          %p.groups-info__new-message
+            = group.show_last_message
+            / 最新のメッセージについて、文章が投稿されている場合、画像が投稿されている場合、まだ投稿がされていない場合が考えられます。かといって、ビュー部分にif、while、caseなどを用いて条件分岐を書いてしまうと、ビューのコードが複雑になってしまい、読みづらくなってしまいます。このような場合には、モデルにインスタンスメソッドを定義することで、ビューの記述をシンプルにすることができます。
 

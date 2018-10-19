@@ -4,9 +4,9 @@
     .header
       .header-left
         %p.header-left__current-group
-          current_group_name
+          = @group.name
         %p.header-left__current-group-members
-          Members:current_group_members
+          Members:
       .header-right
         %a.header-right__header-right__edit-btn
           Edit
@@ -16,9 +16,28 @@
       %form
         .input-box
           = form_for [@group, @message] do |f|
-            = f.text_field :content, class: 'input-left', placeholder: 'type a message'
-            .input_left
-              = f.label :image, class: 'input-left__icon' do
+            = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+            .input-box__icon
+              = f.label :image, class: 'input-box__icon__mark' do
                 %i.fa.fa-image
-                = f.file_field :image, class: 'hidden'
-            = f.submit 'Send', class: 'submit-btn'
+                = f.file_field :image, class: 'input-box__icon__link'
+            = f.submit 'Send', class: 'input-box__btn'
+
+    / .form
+    /   = form_for [@group, @message] do |f|
+    /     = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+    /     .form__mask
+    /       = f.label :image, class: 'form__mask__image' do
+    /         = fa_icon 'picture-o', class: 'icon'
+    /         = f.file_field :image, class: 'hidden'
+    /     = f.submit 'Send', class: 'form__submit'
+
+
+    / .form
+    /   %form
+    /     .input-box
+    /       %input.input-left{type: "text_field", placeholder: "type-a-message"}
+    /         %label.input-left__icon{for: "imagefile"}
+    /           %i.fa.fa-image
+    /           %input.input-file{type: "file",  id: "imagefile"}
+    /     %input.submit-btn{type: "submit", value: "Send"}
