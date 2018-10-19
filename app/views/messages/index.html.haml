@@ -1,5 +1,5 @@
 .wrapper
-  = render partial: "devise/shared/sidebar"
+  = render partial: "groups/sidebar"
   .main
     .header
       .header-left
@@ -11,36 +11,7 @@
         %a.header-right__header-right__edit-btn
           Edit
     .messages
-      .a-message
-        .name-and-date
-          %p.name-and-date__post-user
-            post-user
-          %p.name-and-date__post-date
-            post-date
-        %p.text
-          text
-        %img.pic
-          img
-      .a-message
-        .name-and-date
-          %p.name-and-date__post-user
-            post-user2
-          %p.name-and-date__post-date
-            post-date2
-        %p.text
-          text2
-        %img.pic
-          img2
-      .a-message
-        .name-and-date
-          %p.name-and-date__post-user
-            post-user3
-          %p.name-and-date__post-date
-            post-date3
-        %p.text
-          text3
-        %img.pic
-          img3
+      = render @messages #render partial: 'message', collection: @messagesと同義
     .form
       %form
         .input-box
