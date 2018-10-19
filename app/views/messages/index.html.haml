@@ -44,8 +44,10 @@
     .form
       %form
         .input-box
-          %input.input-left{type: "text_field", placeholder: "type-a-message"}
-            %label.input-left__icon{for: "imagefile"}
-              %i.fa.fa-image
-              %input.input-file{type: "file",  id: "imagefile"}
-        %input.submit-btn{type: "submit", value: "Send"}
+          = form_for [@group, @message] do |f|
+            = f.text_field :content, class: 'input-left', placeholder: 'type a message'
+            .input_left
+              = f.label :image, class: 'input-left__icon' do
+                %i.fa.fa-image
+                = f.file_field :image, class: 'hidden'
+            = f.submit 'Send', class: 'submit-btn'
