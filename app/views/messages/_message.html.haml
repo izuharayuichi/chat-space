@@ -1,0 +1,10 @@
+.a-message
+  .name-and-date
+    %p.name-and-date__post-user
+      = message.user.name
+    %p.name-and-date__post-date
+      = format_posted_time(message.created_at)
+    - if message.content.present?
+      %p.text
+        = message.content
+    = image_tag message.image.url if message.image.present?

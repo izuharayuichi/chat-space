@@ -1,6 +1,6 @@
 .messages{
   padding: 6px 0 0 0;
-  @include div-basic( calc(100vh - 100px - 90px), calc( 100vw - 300px))
+  @include div-basic( calc(100vh - 100px - 90px), calc( 100vw - 300px - 40px))
 }
 
 .name-and-date{
