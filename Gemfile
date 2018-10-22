@@ -45,7 +45,10 @@ group :development, :test do
   gem 'pry-rails'
   gem 'mini_magick'
   gem 'carrierwave'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'rails-controller-testing'
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'faker'
 end
 
 group :development do
