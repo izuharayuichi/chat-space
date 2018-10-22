@@ -8,12 +8,12 @@ describe MessagesController do
 
     context 'log in' do
       before do
-        login user
-        get :index, params: { group_id: group.id}
+        login_user(user)
+        get :index, params: { group_id: group.id }
       end
 
       it 'assigns @message' do
-        expect(assigns(:message)).to be_a_new(message)
+        expect(assigns(:message)).to be_a_new(Message)
       end
 
       it 'assigns @group' do
@@ -37,11 +37,11 @@ describe MessagesController do
   end
 
   describe '#create' do
-    let(:params) { { group_id: group_id, user_id: use.id, message: attributes_for(:message) } }
+    let(:params) { { group_id: group.id, user_id: user.id, message: attributes_for(:message) } }
 
     context 'log in' do
       before do
-        login user
+        login_user(user)
       end
 
       context 'can save' do
@@ -54,16 +54,16 @@ describe MessagesController do
           expect{ subject }.to change(Message, :count).by(1)
         end
 
-        it 'redirects to group_message_path' do
+        it 'redirects to group_messages_path' do
           subject
-          expect(response).to redirect_to(group_message_path(group))
+          expect(response).to redirect_to(group_messages_path(group))
         end
       end
 
       context 'can not save' do
-        let(:invalid_params){ { group_id: group.id, user_id: user.id, message: attributes_for(:message, content:nil, image:nil) } }
+        let(:invalid_params) { { group_id: group.id, user_id: user.id, message: attributes_for(:message, content: nil, image: nil) } }
 
-        subject{
+        subject {
           post :create,
           params: invalid_params
         }

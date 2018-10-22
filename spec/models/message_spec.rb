@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 RSpec.describe Message, type: :model do
   describe '#create' do
     context 'can save' do
@@ -18,13 +17,13 @@ RSpec.describe Message, type: :model do
     end
 
     context 'can not save' do
-      it "is invalid without a content or a image" do
+      it "is invalid without content and image" do
         message = build(:message, content: nil, image: nil)
         message.valid?
         expect(message.errors[:content]).to include('を入力してください')
       end
 
-      it "is invalid without a group_id" do
+      it "is invalid without group_id" do
         message = build(:message, group_id: nil)
         message.valid?
         expect(message.errors[:group]).to include('を入力してください')
