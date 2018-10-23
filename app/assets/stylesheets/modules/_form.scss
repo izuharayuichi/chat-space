@@ -17,15 +17,13 @@
     font-size: 16px;
     color: $black;
   }
-  &__icon{
-    &__mark{
-      position: absolute;
-      top: 13px;
-      right: 185px;
-    }
-    &__link{
-      display: none;
-    }
+  &__mark{
+    position: absolute;
+    top: 13px;
+    right: 185px;
+  }
+  &__link{
+    display: none;
   }
   &__btn{
     height: 50px;
