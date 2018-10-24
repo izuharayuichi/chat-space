@@ -1,4 +1,5 @@
 .groups{
+  overflow: scroll;
   @include div-basic( calc(100vh - 100px), 300px, $side_blue_light)
 }
 
