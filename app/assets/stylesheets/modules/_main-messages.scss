@@ -18,12 +18,21 @@
     color: #999999;
     font-size: 12px;
   }
+  &__text{
+    clear: both;
+    color: $black;
+    font-size: 14px;
+  }
+  &__image{
+    clear: both;
+  }
 }
 
-.text{
-  clear: both;
-  color: $black;
-  font-size: 14px;
+.clearfix:after{
+ content: "";
+ display: block;
+ clear: both;
 }
+
 
 
