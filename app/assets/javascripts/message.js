@@ -39,15 +39,16 @@ $(function(){
       // 入力部分を空にする
       $('.input-box__text').val('')
       $('.input-box__image').val('')
-      $(".input-box__btn").removeAttr("disabled");
       var speed = 100; // ミリ秒で記述
       var href= $(this).attr("href");
       var target = $('.messages');
       var position = target.get(0).scrollHeight;
       $('.messages').animate({scrollTop:position}, speed, 'swing')
-      })
+    })
     .fail(function(){
       alert('error');
+    })
+    .always(function(){
       $(".input-box__btn").removeAttr("disabled");
     })
   });
