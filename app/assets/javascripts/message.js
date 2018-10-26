@@ -1,21 +1,24 @@
 $(function(){
   function buildHTML(message){
+    var insertImage = '';
+    if (message.image_url) {
+      insertImage = `<img src="${message.image_url}">`;
+    }
     var html = `<div class="a-message">
                   <div class="name-and-date">
                     <p class="name-and-date__post-user">
-                      ${message.user.name}
+                      ${message.name}
                     </p>
                     <p class="name-and-date__post-date">
-                      ${format_posted_time(message.created_at)}
+                      ${message.date}
                     </p>
-                    <% if message.content.present? %>
+                    <p class="name-and-date__text">
                       ${message.content}
-                    <% end %>
-                    <% if message.image.present? %>
-                      ${message.image.url}
-                    <% end %>
+                    </p>
+                    ${insertImage}
                   </div>
                 </div>`
+    return html;
   }
   $('.js-form').on('submit', function(e){
     e.preventDefault();
@@ -30,12 +33,22 @@ $(function(){
       contentType: false
     })
     .done(function(data){
+      // 必要な情報を書き加えて新しいメッセージ部分ができる
       var html = buildHTML(data);
       $('.messages').append(html)
-      $('.textbox').val('')
-    })
+      // 入力部分を空にする
+      $('.input-box__text').val('')
+      $('.input-box__image').val('')
+      $(".input-box__btn").removeAttr("disabled");
+      var speed = 100; // ミリ秒で記述
+      var href= $(this).attr("href");
+      var target = $('.messages');
+      var position = target.get(0).scrollHeight;
+      $('.messages').animate({scrollTop:position}, speed, 'swing')
+      })
     .fail(function(){
       alert('error');
+      $(".input-box__btn").removeAttr("disabled");
     })
   });
 });
