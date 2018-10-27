@@ -37,8 +37,7 @@ $(function(){
       var html = buildHTML(data);
       $('.messages').append(html)
       // 入力部分を空にする
-      $('.input-box__text').val('')
-      $('.input-box__image').val('')
+      $('.input-box__text, .input-box__image').val('')
       var speed = 100; // ミリ秒で記述
       var href= $(this).attr("href");
       var target = $('.messages');
