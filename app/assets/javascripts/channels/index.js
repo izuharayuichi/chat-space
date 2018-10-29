@@ -45,6 +45,9 @@ $(function(){
           $(`.user-search-add${ user.id }`).on('click', function(){
             registerName(user)
             $(this).parent().remove();
+            $(`#chat-group-user-${ user.id }`).on('click', function(){
+              $(this).parent().empty();
+            })
           })
         });
       }
