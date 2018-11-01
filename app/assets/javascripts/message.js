@@ -1,4 +1,5 @@
 $(function(){
+
   function buildHTML(message){
     var insertImage = '';
     if (message.image_url) {
@@ -51,4 +52,28 @@ $(function(){
       $(".input-box__btn").removeAttr("disabled");
     })
   });
+
+    var interval = setInterval(function(){
+      if (window.location.href.match(/\/groups\/\d+\/messages/)){
+    $.ajax({
+      url: (location.href),
+      type: "GET",
+      dataType: 'json'
+    })
+    .done(function(messages, message){
+      var latest_id = Math.max.apply(message.id)
+      var insertHTML = '';
+      messages.forEach(function(new_message) {
+        if (new_message.id > latest_id){
+          insertHTML += buildHTML(new_message);
+        }
+      });
+      $('.messages').append(insertHTML);
+    })
+    .fail(function(data){
+      alert('自動更新に失敗しました')
+    });
+  } else {
+    clearInterval(interval);
+  }}, 5000);
 });
