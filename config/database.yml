@@ -1,9 +1,4 @@
-production:
-  <<: *default
-  database: ~~~
-  username: root
-  password: <%= ENV['DATABASE_PASSWORD'] %>
-  socket: /var/lib/mysql/mysql.sock# MySQL. Versions 5.0 and up are supported.
+# MySQL. Versions 5.0 and up are supported.
 #
 # Install the MySQL driver
 #   gem install mysql2
