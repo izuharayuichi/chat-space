@@ -5,7 +5,7 @@ $(function(){
     if (message.image_url) {
       insertImage = `<img src="${message.image_url}">`;
     }
-    var html = `<div class="a-message">
+    var html = `<div class="a-message" data-message-id="${message.id}">
                   <div class="name-and-date">
                     <p class="name-and-date__post-user">
                       ${message.name}
@@ -60,8 +60,8 @@ $(function(){
       type: "GET",
       dataType: 'json'
     })
-    .done(function(messages, message){
-      var latest_id = Math.max.apply(message.id)
+    .done(function(messages) {
+      var latest_id = $('.a-message').last().attr('data-message-id')
       var insertHTML = '';
       messages.forEach(function(new_message) {
         if (new_message.id > latest_id){
