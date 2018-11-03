@@ -20,3 +20,5 @@ public/uploads/*
 app/assets/stylesheets/mixin/mixin.scss
 
 *.erb
+
+config/secrets.yml
