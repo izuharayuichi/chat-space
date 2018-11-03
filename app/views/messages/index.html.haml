@@ -10,8 +10,9 @@
           - @group.group_users.each do |group_user|
             = group_user.user.name
       .header-right
-        %a.header-right__header-right__edit-btn
-          Edit
+        = link_to edit_group_path(@group) do
+          %p.header-right__header-right__edit-btn
+            Edit
     .messages
       = render @messages #render partial: 'message', collection: @messagesと同義
     .form

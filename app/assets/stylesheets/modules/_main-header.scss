@@ -34,4 +34,8 @@
   line-height: 40px;
   color: $light-blue;
   float: right;
+  &__header-right__edit-btn{
+    color: $light-blue;
+    text-decoration: none;
+  }
 }
