@@ -22,7 +22,7 @@ $(function(){
     return html;
   }
   $('.js-form').on('submit', function(e){
-    e.preventDefault();
+    e.validate.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action')
     $.ajax({
