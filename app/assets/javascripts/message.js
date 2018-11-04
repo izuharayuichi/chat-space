@@ -5,18 +5,18 @@ $(function(){
     if (message.image_url) {
       insertImage = `<img src="${message.image_url}">`;
     }
-    var html = `<div class="a-message" data-message-id="${message.id}">
+    var html = `<div class="a-message" data-message-id="${ message.id }">
                   <div class="name-and-date">
                     <p class="name-and-date__post-user">
-                      ${message.name}
+                      ${ message.name }
                     </p>
                     <p class="name-and-date__post-date">
-                      ${message.date}
+                      ${ message.date }
                     </p>
                     <p class="name-and-date__text">
-                      ${message.content}
+                      ${ message.content }
                     </p>
-                    ${insertImage}
+                    ${ insertImage }
                   </div>
                 </div>`
     return html;
@@ -75,6 +75,11 @@ $(function(){
         }
       });
       $('.messages').append(insertHTML);
+      var speed = 100; // ミリ秒で記述
+      var href= $(this).attr("href");
+      var target = $('.messages');
+      var position = target.get(0).scrollHeight;
+      $('.messages').animate({scrollTop:position}, speed, 'swing')
     })
     .fail(function(data){
       alert('自動更新に失敗しました')
