@@ -17,6 +17,7 @@ $(function(){
                 </div>`
     search_list.append(html);
   }
+
   function registerName(user){
     var html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user'>
                 <input name='group[user_ids][]' type='hidden' value='${ user.id }'>
