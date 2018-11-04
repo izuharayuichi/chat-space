@@ -27,6 +27,12 @@ $(function(){
     member_list.append(html);
   }
 
+  function removeMember(){
+    $(`.user-search-remove`).on('click', function(){
+      $(this).parent().remove();
+    })
+  }
+
   $("#user-search-field").on('keyup', function(e){
     var input = $("#user-search-field").val();
 
@@ -45,9 +51,7 @@ $(function(){
           $(`.user-search-add${ user.id }`).on('click', function(){
             registerName(user)
             $(this).parent().remove();
-            $(`.user-search-remove`).on('click', function(){
-              $(this).parent().remove();
-            })
+            removeMember()
           })
         })
       } else {
@@ -60,7 +64,5 @@ $(function(){
     })
   })
 
-  $(`.user-search-remove`).on('click', function(){
-    $(this).parent().remove();
-  })
+  removeMember()
 })
