@@ -19,10 +19,10 @@ $(function(){
   }
 
   function registerName(user){
-    var html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-${ user.id }'>
+    var html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user'>
                 <input name='group[user_ids][]' type='hidden' value='${ user.id }'>
                 <p class='chat-group-user__name'>${ user.name }</p>
-                <a class='user-search-remove${ user.id } chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
+                <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
               </div>`
     member_list.append(html);
   }
@@ -46,7 +46,7 @@ $(function(){
           $(`.user-search-add${ user.id }`).on('click', function(){
             registerName(user)
             $(this).parent().remove();
-            $(`.user-search-remove${ user.id }`).on('click', function(){
+            $(`.user-search-remove`).on('click', function(){
               $(this).parent().remove();
             })
           })
@@ -59,5 +59,9 @@ $(function(){
     .fail(function() {
       alert('名前検索に失敗しました');
     })
+  })
+
+  $(`.user-search-remove`).on('click', function(){
+    $(this).parent().remove();
   })
 })
