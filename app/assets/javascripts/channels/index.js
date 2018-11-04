@@ -11,9 +11,9 @@ $(function(){
     search_list.append(html);
   }
 
-  function appendNoName(user){
+  function appendNoName(text){
     var html = `<div class="chat-group-user clearfix">
-                  <p class="chat-group-user__name">${ user.name }</p>
+                  <p class="chat-group-user__name">${ text }</p>
                 </div>`
     search_list.append(html);
   }
@@ -39,6 +39,7 @@ $(function(){
 
     .done(function(users){
       $("#user-search-result").empty();
+      console.log(users.length)
       if (users.length !== 0 ) {
         users.forEach(function(user){
           appendName(user);
@@ -49,9 +50,8 @@ $(function(){
               $(this).parent().empty();
             })
           })
-        });
-      }
-      else {
+        })
+      } else {
         appendNoName("一致する名前はありません");
       }
     })
