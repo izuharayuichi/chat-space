@@ -22,35 +22,41 @@ $(function(){
     return html;
   }
   $('.js-form').on('submit', function(e){
-    e.validate.preventDefault();
+    e.preventDefault();
+    // if (".input-box__text" != null || ".input-box__image" !== null) {
     var formData = new FormData(this);
-    var url = $(this).attr('action')
-    $.ajax({
-      url: url,
-      type: "POST",
-      data: formData,
-      dataType: 'json',
-      processData: false,
-      contentType: false
-    })
-    .done(function(data){
-      // 必要な情報を書き加えて新しいメッセージ部分ができる
-      var html = buildHTML(data);
-      $('.messages').append(html)
-      // 入力部分を空にする
-      $('.input-box__text, .input-box__image').val('')
-      var speed = 100; // ミリ秒で記述
-      var href= $(this).attr("href");
-      var target = $('.messages');
-      var position = target.get(0).scrollHeight;
-      $('.messages').animate({scrollTop:position}, speed, 'swing')
-    })
-    .fail(function(){
-      alert('error');
-    })
-    .always(function(){
-      $(".input-box__btn").removeAttr("disabled");
-    })
+    // for(item of formData) console.log(item);
+    // if ("formData.content" != "" || "formData.image.name" !== "") {
+      var url = $(this).attr('action')
+      $.ajax({
+        url: url,
+        type: "POST",
+        data: formData,
+        dataType: 'json',
+        processData: false,
+        contentType: false
+      })
+      .done(function(data){
+        console.log(data.image_url)
+        if ( data.content != null || data.image_url != null ) {
+          // 必要な情報を書き加えて新しいメッセージ部分ができる
+          var html = buildHTML(data);
+          $('.messages').append(html)
+          // 入力部分を空にする
+          $('.input-box__text, .input-box__link').val('')
+          var speed = 100; // ミリ秒で記述
+          var href= $(this).attr("href");
+          var target = $('.messages');
+          var position = target.get(0).scrollHeight;
+          $('.messages').animate({scrollTop:position}, speed, 'swing')
+        }
+      })
+      .fail(function(){
+        alert('error');
+      })
+      .always(function(){
+        $(".input-box__btn").removeAttr("disabled");
+      })
   });
 
     var interval = setInterval(function(){
