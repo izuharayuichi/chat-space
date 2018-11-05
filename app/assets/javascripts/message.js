@@ -44,11 +44,8 @@ $(function(){
           $('.messages').append(html)
           // 入力部分を空にする
           $('.input-box__text, .input-box__link').val('')
-          var speed = 100; // ミリ秒で記述
-          var href= $(this).attr("href");
-          var target = $('.messages');
-          var position = target.get(0).scrollHeight;
-          $('.messages').animate({scrollTop:position}, speed, 'swing')
+          var position = $('.messages').get(0).scrollHeight;
+          $('.messages').animate({scrollTop:position}, 100, 'swing')
         }
       })
       .fail(function(){
@@ -75,11 +72,8 @@ $(function(){
         }
       });
       $('.messages').append(insertHTML);
-      var speed = 100; // ミリ秒で記述
-      var href= $(this).attr("href");
-      var target = $('.messages');
-      var position = target.get(0).scrollHeight;
-      $('.messages').animate({scrollTop:position}, speed, 'swing')
+      var position = $('.messages').get(0).scrollHeight;
+      $('.messages').animate({scrollTop:position}, 100, 'swing')
     })
     .fail(function(data){
       alert('自動更新に失敗しました')
