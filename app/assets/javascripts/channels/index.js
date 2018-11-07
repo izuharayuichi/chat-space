@@ -24,7 +24,8 @@ $(function(){
                 <p class='chat-group-user__name'>${ user.name }</p>
                 <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
               </div>`
-    member_list.append(html);
+    member_list.append(html)
+    $(`.user-search-add${ user.id }`).parent().remove();
   }
 
   function removeMember(){
@@ -50,7 +51,6 @@ $(function(){
           appendName(user);
           $(`.user-search-add${ user.id }`).on('click', function(){
             registerName(user)
-            $(this).parent().remove();
             removeMember()
           })
         })
